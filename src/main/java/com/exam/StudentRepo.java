@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface StudentRepo extends CrudRepository<Student, Long> {
+	public List<Student> findAll();
 	public List<Student> findByName(String name);
 
 	@Query("From Student where name=?1 order by id")
